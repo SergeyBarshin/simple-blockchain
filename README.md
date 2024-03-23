@@ -39,11 +39,15 @@
 
 ## О проекте
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Этот проект представляет собой простую реализацию blockchain на языке C++ в качестве прикатики ИУ5-21Б за 2 семестр.
 
 ### Сферы применения блокчейна
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.!
+- Финансовая сфера.
+- Здравоохранение.
+- Голосование и выборы.
+- Логистика и поставки.
+
 
 ### Используемые технологии
 
