@@ -1,0 +1,63 @@
+    /*promise<unsigned short> server_port;
+    thread server_thread([&server, &server_port]() {
+        // Start server
+        server->start([&server_port](unsigned short port) { server_port.set_value(port); });
+    });
+    cout << "Server listening on port " << server_port.get_future().get() << endl << endl;
+*/
+    // server_thread.join();
+    /*
+
+
+
+    // пример запроса 'парсящего' запрос
+    server.resource["^/info$"]["GET"] = [](shared_ptr<HttpServer::Response> response,
+                                           shared_ptr<HttpServer::Request> request) {
+        stringstream stream;
+        stream << "<h1>Request from " << request->remote_endpoint().address().to_string() << ":"
+               << request->remote_endpoint().port() << "</h1>";
+
+        stream << request->method << " " << request->path << " HTTP/" << request->http_version;
+
+        stream << "<h2>Query Fields</h2>";
+        auto query_fields = request->parse_query_string();
+        for (auto &field : query_fields) stream << field.first << ": " << field.second << "<br>";
+
+        stream << "<h2>Header Fields</h2>";
+        for (auto &field : request->header) stream << field.first << ": " << field.second << "<br>";
+
+        response->write(stream);
+    };
+
+    server.resource["^/string$"]["POST"] = [](shared_ptr<HttpServer::Response> response,
+                                              shared_ptr<HttpServer::Request> request) {
+        // Retrieve string:
+        auto content = request->content.string();
+        // request->content.string() is a convenience function for:
+        // stringstream ss;
+        // ss << request->content.rdbuf();
+        // auto content=ss.str();
+
+        *response << "HTTP/1.1 200 OK\r\nContent-Length: " << content.length() << "\r\n\r\n" << content;
+        // response->write();
+        //  Alternatively, use one of the convenience functions, for instance:
+        //  response->write(content);
+    };
+
+    server.default_resource["GET"] = [](shared_ptr<HttpServer::Response> response,
+                                        shared_ptr<HttpServer::Request> request) {
+        string test_respone = "response";
+        stringstream stream;
+
+        stream << test_respone;
+
+        response->write(stream);
+    };
+
+    server.on_error = [](shared_ptr<HttpServer::Request> , const SimpleWeb::error_code &ec) {
+    // Handle errors here
+    // Note that connection timeouts will also call this handle with ec set to SimpleWeb::errc::operation_canceled
+    if (ec.message() != "End of file") cout << "SERVER ERROR: " << ec.message() << endl;
+};
+
+* /
