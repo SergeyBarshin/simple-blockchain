@@ -51,7 +51,7 @@ build/
 .vscode
 *.out
 simple-blockchain
-
+ports.txt
 ### CMake Patch ###
 # External projects
 *-prefix/

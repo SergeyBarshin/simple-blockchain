@@ -11,12 +11,18 @@ set(FORT_ENABLE_TESTING OFF CACHE INTERNAL "")
 add_subdirectory(libfort)
 add_subdirectory(Simple-Web-Server)
 add_subdirectory(core)
-add_subdirectory(json)
+
+# собираем json и веб сервер и линкуем их с core
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+add_subdirectory(${nlohmann_json_source}
+   ${CMAKE_CURRENT_SOURCE_DIR}/json)
 
 find_package(Boost COMPONENTS system REQUIRED)
 target_include_directories(core INTERFACE ${Boost_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/Simple-Web-Server)
 
-target_link_libraries(core PRIVATE simple-web-server)
+target_link_libraries(core PRIVATE simple-web-server nlohmann_json::nlohmann_json)
+
+
 
 
 set(${project}_SOURCES main.cpp)
@@ -25,4 +31,3 @@ add_executable(${project} ${${project}_SOURCE_LIST})
 
 target_link_libraries(${project} PRIVATE fort)
 target_link_libraries(${project} PRIVATE core)
-target_link_libraries(${project} PRIVATE nlohmann_json)

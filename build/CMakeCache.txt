@@ -310,9 +310,6 @@ FORT_HAVE_UTF8:BOOL=ON
 //Enable wchar support
 FORT_HAVE_WCHAR:BOOL=ON
 
-//Build the unit tests when BUILD_TESTING is enabled.
-JSON_BuildTests:BOOL=OFF
-
 //Enable CI build targets.
 JSON_CI:BOOL=OFF
 
@@ -403,6 +400,9 @@ libfort_SOURCE_DIR:STATIC=/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-bloc
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/json
 
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=nlohmann_json_DIR-NOTFOUND
+
 //Value Computed by CMake
 nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
 
@@ -423,6 +423,9 @@ simple-blockchain_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 simple-blockchain_SOURCE_DIR:STATIC=/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src
+
+//The directory containing a CMake configuration file for src/json.
+src/json_DIR:PATH=src/json_DIR-NOTFOUND
 
 
 ########################
@@ -614,6 +617,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 FORT_BUILD_TYPE-STRINGS:INTERNAL=common;asan;ubsan;coveralls
 //Enables building tests and examples
 FORT_ENABLE_TESTING:INTERNAL=OFF
+//Build the unit tests when BUILD_TESTING is enabled.
+JSON_BuildTests:INTERNAL=OFF
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
 OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1

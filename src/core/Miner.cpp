@@ -1,38 +1,55 @@
 #include "Miner.hpp"
 
-Miner::Miner() {
-    std::cout << "alive2\n";
-
-    // setUpPeer(std::move(server), peers);
-}
-
 Miner::Miner(std::shared_ptr<HttpServer> server, std::vector<int>& peers) : server(server), peers(peers) {
     start(server, peers);
     setUpPeer(std::move(server), peers);
 }
 
+int Miner::getAvilablePort() {
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<int> uni(3000, 4000);
+
+    auto port = uni(rng);
+    return port;
+}
+
+void Miner::writePort(unsigned int port, const char* path) {
+    std::ofstream file;
+    file.open(path, std::ios::out | std::ios::app);
+    if (file.fail()) throw std::ios_base::failure(std::strerror(errno));
+
+    file.exceptions(file.exceptions() | std::ios::failbit | std::ifstream::badbit);
+
+    file << port << std::endl;
+}
+
+std::vector<int> Miner::readPort(const char* path) {
+    std::ifstream is(path);
+    std::istream_iterator<int> start(is), end;
+    std::vector<int> ports(start, end);
+    // for (auto i : numbers) std::cout << i << ", ";
+    // std::copy(ports.begin(), ports.end(), std::ostream_iterator<int>(std::cout, ","));
+    return ports;
+}
+
 void Miner::setUpPeer(std::shared_ptr<HttpServer> server, std::vector<int>& peers) {
-    // функция должна принимать ссылку на блокчейн
-    server->resource["^/current$"]["GET"] = [](std::shared_ptr<HttpServer::Response> response,
-                                               std::shared_ptr<HttpServer::Request> request) {
-        std::cout << "GET / HTTP/1.1 current\n";
-        response->write("Тестовый ответ");  // возвращаем порт этого пира
+    server->resource["^/current$"]["GET"] = [&peers](std::shared_ptr<HttpServer::Response> response,
+                                                     std::shared_ptr<HttpServer::Request> request) {
+        std::cout << "GET / HTTP/1.1 current ";
+        std::cout << "ПИРЫ В СЕТИ: " << peers.size() << '\n';
+        response->write("Тестовый ответ");
         // response->write(blockchain.serialize());
     };
 
     server->resource["^/peerpush$"]["POST"] = [&peers](std::shared_ptr<HttpServer::Response> response,
                                                        std::shared_ptr<HttpServer::Request> request) {
-        /* json content = с::parse(request->content);
-         peers.push_back(content["port"].get<int>());
-         std::cout << "POST / HTTP/1.1 " << content["port"].get<int>() << " added to peers";
-         *response << "HTTP/1.1 200 OK\r\nContent-Length: " << content.size() << "\r\n\r\n"
-        << "joined";*/
-
-        std::cout << "POST / HTTP/1.1 peerpush";
-        *response << "HTTP/1.1 200 OK\r\nContent-Length: " << 228 << "\r\n\r\n"
+        json content = json::parse(request->content);
+        peers.push_back(content["port"].get<int>());
+        std::cout << "POST / HTTP/1.1 " << content["port"].get<int>() << " added to peers\n";
+        *response << "HTTP/1.1 200 OK\r\nContent-Length: " << content.size() << "\r\n\r\n"
                   << "joined";
     };
-
     std::cout << "Server started at localhost: " << server->config.port << "\n";
 }
 
@@ -40,14 +57,33 @@ void Miner::start(std::shared_ptr<HttpServer> server, std::vector<int>& peers) {
     std::cout << "Welcome to Chain, stranger!\n";
     std::cout << "If you are creating a new blockchain, type 'y',\nif you are joining the existing, type 'j':\n";
     char in = 'j';
-    //  std::cin >> in;
+    // std::cin >> in;
 
-    server->config.port = 8080;  // тут должен быть getAviliablePort()
+    server->config.port = getAvilablePort();
+    writePort(server->config.port, "ports.txt");
+    // сейчас ноды узнают других членов сети по общему файлу -> если успею, то переделать на внешние сети
 
     if (in == 'y') {
+        // инициализируем блокчейн
     } else if (in == 'j') {
-        // записываем пир во все другие пиры и все другие в наш
+        peers = readPort("ports.txt");
+
+        json js;
+        js["port"] = server->config.port;
+
         // POST /peerpush
-        // GET /current
+        for (int i = 0; i < peers.size() - 1; i++) {
+            int port = peers[i];
+            HttpClient client("localhost:" + std::to_string(port));
+            std::shared_ptr<HttpClient::Response> response = client.request("POST", "/peerpush", js.dump());
+        }
+
+        // std::vector<std::string> vect;
+        for (int a = 0; a < peers.size() - 1; a++) {  // GET /current
+            int port = peers[a];
+            HttpClient client("localhost:" + std::to_string(port));
+            std::shared_ptr<HttpClient::Response> response = client.request("GET", "/current");
+            //  vect.push_back(response->content.string());
+        }
     }
 }

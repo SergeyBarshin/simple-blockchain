@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
 
-CXX_INCLUDES = -I"/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/Simple-Web-Server" -isystem /opt/homebrew/include
+CXX_INCLUDES = -I"/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/Simple-Web-Server" -I"/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/json/include" -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
 

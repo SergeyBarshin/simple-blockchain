@@ -9,9 +9,9 @@ int main(void) {
     std::thread server_thread([&server]() { server->start(); });
 
     // тестовые запросы
-    HttpClient client("localhost:8080");
-    std::shared_ptr<HttpClient::Response> response = client.request("GET", "/current");
-    std::cout << response->content.string() << '\n';
+    /* HttpClient client("localhost:8080");
+     std::shared_ptr<HttpClient::Response> response = client.request("GET", "/current");
+     std::cout << response->content.string() << '\n';*/
 
     server_thread.join();
     return 0;
