@@ -2,17 +2,17 @@
 #include "libfort/lib/fort.hpp"
 
 int main(void) {
-    // auto server = HttpServer();
     auto server = std::make_shared<HttpServer>();
     std::vector<int> peers;
+    auto miner = std::make_unique<Miner>(server, peers);
 
-    Miner m;
-    //  auto miner = std::make_unique<Miner>(server, peers);
-    //    std::thread server_thread([&server]() { server->start(); });
+    std::thread server_thread([&server]() { server->start(); });
 
-    // interface - собирает только hpp
+    // тестовые запросы
+    HttpClient client("localhost:8080");
+    std::shared_ptr<HttpClient::Response> response = client.request("GET", "/current");
+    std::cout << response->content.string() << '\n';
 
-    // идея для фикса: simple-Web - подключить как библиотека к майнеру
-
+    server_thread.join();
     return 0;
 }

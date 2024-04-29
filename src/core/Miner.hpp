@@ -16,11 +16,12 @@ class Miner {
     std::shared_ptr<HttpServer> server;
     std::vector<int> peers;
 
-    Miner() { std::cout << "sadads"; };
+    Miner();
     Miner(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
 
-    int start(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
-    // int setUpPeer(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
+    // функция определения роутов
+    void setUpPeer(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
+    void start(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
 };
 
 /*

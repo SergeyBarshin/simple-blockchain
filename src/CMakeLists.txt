@@ -12,11 +12,16 @@ add_subdirectory(libfort)
 add_subdirectory(Simple-Web-Server)
 add_subdirectory(core)
 
+find_package(Boost COMPONENTS system REQUIRED)
+target_include_directories(core INTERFACE ${Boost_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/Simple-Web-Server)
+
+target_link_libraries(core PRIVATE simple-web-server)
+
+
 set(${project}_SOURCES main.cpp)
 set(${project}_SOURCE_LIST ${${project}_SOURCES})
-
 add_executable(${project} ${${project}_SOURCE_LIST})
 
 target_link_libraries(${project} PRIVATE fort)
-target_link_libraries(${project} PRIVATE simple-web-server)
-#target_link_libraries(${project} PRIVATE core)
+#target_link_libraries(${project} PRIVATE simple-web-server)
+target_link_libraries(${project} PRIVATE core)
