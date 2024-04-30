@@ -12,25 +12,30 @@
 
 using HttpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
 using HttpClient = SimpleWeb::Client<SimpleWeb::HTTP>;
+using json = nlohmann::json;
 
 class Miner {
-    using json = nlohmann::json;
-
+   private:
     std::shared_ptr<HttpServer> server;
     std::vector<int> peers;
 
    public:
-    Miner(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
+    Miner(std::shared_ptr<HttpServer> server);
+    Miner(const Miner& m) = delete;
+    Miner* operator=(const Miner& m) = delete;
+
+   public:  // далее основные функции
+    void processInput();
+    void printHelp();
 
    private:
-    // Вспомогательные функции
+    // ф-ции для работы с портами
     int getAvilablePort();
     std::vector<int> readPort(const char* path);
     void writePort(unsigned int port, const char* path);
 
-    // функция определения роутов
-    void setUpPeer(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
-    void start(std::shared_ptr<HttpServer> server, std::vector<int>& peers);
+    void setUpPeer(std::shared_ptr<HttpServer> server);  // функция определения роутов
+    void start(std::shared_ptr<HttpServer> server);      // добавление ноды в сеть
 };
 
 /*

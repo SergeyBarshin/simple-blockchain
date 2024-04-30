@@ -23,8 +23,6 @@ target_include_directories(core INTERFACE ${Boost_INCLUDE_DIRS} ${CMAKE_CURRENT_
 target_link_libraries(core PRIVATE simple-web-server nlohmann_json::nlohmann_json)
 
 
-
-
 set(${project}_SOURCES main.cpp)
 set(${project}_SOURCE_LIST ${${project}_SOURCES})
 add_executable(${project} ${${project}_SOURCE_LIST})
