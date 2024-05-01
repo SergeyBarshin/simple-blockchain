@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/core.dir/Cryptography.cpp.o"
+  "CMakeFiles/core.dir/Cryptography.cpp.o.d"
   "CMakeFiles/core.dir/Miner.cpp.o"
   "CMakeFiles/core.dir/Miner.cpp.o.d"
   "libcore.a"

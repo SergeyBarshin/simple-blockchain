@@ -6,8 +6,7 @@ project(${project})
 set(CMAKE_CXX_STANDARD 20)            # Enable c++20 standard
 
 set(${project}_SOURCES Miner.cpp)
-set(${project}_HEADERS Miner.Hpp)
-set(${project}_HEADERS MerkleTree.Hpp)
+set(${project}_HEADERS Miner.hpp MerkleTree.hpp)
 
 
 set(${project}_SOURCE_LIST

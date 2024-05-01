@@ -610,7 +610,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/opt/homebrew/lib/cmake/Boost-1.85.0/BoostConfig.cmake][cfound components: system ][v1.85.0()]
 //Details about finding OpenSSL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/opt/homebrew/Cellar/openssl@3/3.2.1/lib/libcrypto.dylib][/opt/homebrew/Cellar/openssl@3/3.2.1/include][c ][v3.2.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/opt/homebrew/Cellar/openssl@3/3.2.1/lib/libcrypto.dylib][/opt/homebrew/Cellar/openssl@3/3.2.1/include][c ][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //STRINGS property for variable: FORT_BUILD_TYPE

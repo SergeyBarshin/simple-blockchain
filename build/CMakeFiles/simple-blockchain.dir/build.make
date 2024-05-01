@@ -95,6 +95,8 @@ simple-blockchain: CMakeFiles/simple-blockchain.dir/build.make
 simple-blockchain: libfort/lib/libfort.a
 simple-blockchain: core/libcore.a
 simple-blockchain: /opt/homebrew/lib/libboost_system-mt.dylib
+simple-blockchain: /opt/homebrew/opt/openssl/lib/libssl.dylib
+simple-blockchain: /opt/homebrew/opt/openssl/lib/libcrypto.dylib
 simple-blockchain: CMakeFiles/simple-blockchain.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simple-blockchain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple-blockchain.dir/link.txt --verbose=$(VERBOSE)

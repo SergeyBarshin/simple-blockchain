@@ -908,6 +908,7 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/Simple-Web-Server/client_http.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/Simple-Web-Server/server_http.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/json/single_include/nlohmann/json.hpp
+ /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Cryptography.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Miner.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/libfort/lib/fort.h
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/libfort/lib/fort.hpp
@@ -1652,4 +1653,30 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o
  /opt/homebrew/include/boost/type_traits/is_same.hpp
  /opt/homebrew/include/boost/type_traits/remove_cv.hpp
  /opt/homebrew/include/boost/version.hpp
+ /opt/homebrew/include/openssl/asn1.h
+ /opt/homebrew/include/openssl/asn1err.h
+ /opt/homebrew/include/openssl/bio.h
+ /opt/homebrew/include/openssl/bioerr.h
+ /opt/homebrew/include/openssl/bn.h
+ /opt/homebrew/include/openssl/bnerr.h
+ /opt/homebrew/include/openssl/configuration.h
+ /opt/homebrew/include/openssl/core.h
+ /opt/homebrew/include/openssl/crypto.h
+ /opt/homebrew/include/openssl/cryptoerr.h
+ /opt/homebrew/include/openssl/cryptoerr_legacy.h
+ /opt/homebrew/include/openssl/e_os2.h
+ /opt/homebrew/include/openssl/ec.h
+ /opt/homebrew/include/openssl/ecdh.h
+ /opt/homebrew/include/openssl/ecerr.h
+ /opt/homebrew/include/openssl/macros.h
+ /opt/homebrew/include/openssl/md5.h
+ /opt/homebrew/include/openssl/opensslconf.h
+ /opt/homebrew/include/openssl/opensslv.h
+ /opt/homebrew/include/openssl/params.h
+ /opt/homebrew/include/openssl/ripemd.h
+ /opt/homebrew/include/openssl/safestack.h
+ /opt/homebrew/include/openssl/sha.h
+ /opt/homebrew/include/openssl/stack.h
+ /opt/homebrew/include/openssl/symhacks.h
+ /opt/homebrew/include/openssl/types.h
 

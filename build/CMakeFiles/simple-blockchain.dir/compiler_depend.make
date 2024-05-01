@@ -907,6 +907,7 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/Simple-Web-Server/client_http.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/Simple-Web-Server/server_http.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/json/single_include/nlohmann/json.hpp \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Cryptography.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Miner.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.h \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.hpp \
@@ -1650,8 +1651,64 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
   /opt/homebrew/include/boost/type_traits/is_integral.hpp \
   /opt/homebrew/include/boost/type_traits/is_same.hpp \
   /opt/homebrew/include/boost/type_traits/remove_cv.hpp \
-  /opt/homebrew/include/boost/version.hpp
+  /opt/homebrew/include/boost/version.hpp \
+  /opt/homebrew/include/openssl/asn1.h \
+  /opt/homebrew/include/openssl/asn1err.h \
+  /opt/homebrew/include/openssl/bio.h \
+  /opt/homebrew/include/openssl/bioerr.h \
+  /opt/homebrew/include/openssl/bn.h \
+  /opt/homebrew/include/openssl/bnerr.h \
+  /opt/homebrew/include/openssl/configuration.h \
+  /opt/homebrew/include/openssl/core.h \
+  /opt/homebrew/include/openssl/crypto.h \
+  /opt/homebrew/include/openssl/cryptoerr.h \
+  /opt/homebrew/include/openssl/cryptoerr_legacy.h \
+  /opt/homebrew/include/openssl/e_os2.h \
+  /opt/homebrew/include/openssl/ec.h \
+  /opt/homebrew/include/openssl/ecdh.h \
+  /opt/homebrew/include/openssl/ecerr.h \
+  /opt/homebrew/include/openssl/macros.h \
+  /opt/homebrew/include/openssl/md5.h \
+  /opt/homebrew/include/openssl/opensslconf.h \
+  /opt/homebrew/include/openssl/opensslv.h \
+  /opt/homebrew/include/openssl/params.h \
+  /opt/homebrew/include/openssl/ripemd.h \
+  /opt/homebrew/include/openssl/safestack.h \
+  /opt/homebrew/include/openssl/sha.h \
+  /opt/homebrew/include/openssl/stack.h \
+  /opt/homebrew/include/openssl/symhacks.h \
+  /opt/homebrew/include/openssl/types.h
 
+
+/opt/homebrew/include/openssl/stack.h:
+
+/opt/homebrew/include/openssl/safestack.h:
+
+/opt/homebrew/include/openssl/ripemd.h:
+
+/opt/homebrew/include/openssl/params.h:
+
+/opt/homebrew/include/openssl/opensslv.h:
+
+/opt/homebrew/include/openssl/md5.h:
+
+/opt/homebrew/include/openssl/macros.h:
+
+/opt/homebrew/include/openssl/e_os2.h:
+
+/opt/homebrew/include/openssl/cryptoerr_legacy.h:
+
+/opt/homebrew/include/openssl/cryptoerr.h:
+
+/opt/homebrew/include/openssl/core.h:
+
+/opt/homebrew/include/openssl/bn.h:
+
+/opt/homebrew/include/openssl/bioerr.h:
+
+/opt/homebrew/include/openssl/bio.h:
+
+/opt/homebrew/include/openssl/asn1err.h:
 
 /opt/homebrew/include/boost/version.hpp:
 
@@ -2281,10 +2338,6 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /opt/homebrew/include/boost/asio/executor_work_guard.hpp:
 
-/opt/homebrew/include/boost/asio/high_resolution_timer.hpp:
-
-/opt/homebrew/include/boost/asio/executor.hpp:
-
 /opt/homebrew/include/boost/asio/execution/mapping.hpp:
 
 /opt/homebrew/include/boost/asio/detail/atomic_count.hpp:
@@ -2723,6 +2776,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.hpp:
 
+/opt/homebrew/include/openssl/types.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/type_list.h:
 
 /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.h:
@@ -2732,6 +2787,12 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /opt/homebrew/include/boost/mpl/aux_/config/dtp.hpp:
 
 /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Miner.hpp:
+
+/opt/homebrew/include/boost/asio/high_resolution_timer.hpp:
+
+/opt/homebrew/include/boost/asio/executor.hpp:
+
+/Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Cryptography.hpp:
 
 /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/Simple-Web-Server/utility.hpp:
 
@@ -2772,6 +2833,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/xlocale/_stdlib.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/xlocale/__wctype.h:
+
+/opt/homebrew/include/openssl/ecdh.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/wchar.h:
 
@@ -2815,6 +2878,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /opt/homebrew/include/boost/asio/impl/consign.hpp:
 
+/opt/homebrew/include/openssl/configuration.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/sockio.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/socket.h:
@@ -2845,6 +2910,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/filio.h:
 
+/opt/homebrew/include/openssl/symhacks.h:
+
 /opt/homebrew/include/boost/asio/detail/deadline_timer_service.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/time.h:
@@ -2872,6 +2939,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/generate_n.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_uid_t.h:
+
+/opt/homebrew/include/openssl/bnerr.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_u_int8_t.h:
 
@@ -3151,6 +3220,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/stdint.h:
 
+/opt/homebrew/include/openssl/ecerr.h:
+
 /opt/homebrew/include/boost/asio/use_awaitable.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/unique.h:
@@ -3385,6 +3456,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
+/opt/homebrew/include/openssl/sha.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/make_signed.h:
 
 /opt/homebrew/include/boost/asio/impl/any_io_executor.ipp:
@@ -3490,6 +3563,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /opt/homebrew/include/boost/asio/detail/wrapped_handler.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_ssize_t.h:
+
+/opt/homebrew/include/openssl/ec.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__concepts/class_or_enum.h:
 
@@ -3620,6 +3695,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/netinet/in.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__utility/exchange.h:
+
+/opt/homebrew/include/openssl/asn1.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/is_nothrow_destructible.h:
 
@@ -4521,6 +4598,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__memory/construct_at.h:
 
+/opt/homebrew/include/openssl/crypto.h:
+
 /opt/homebrew/include/boost/config/helper_macros.hpp:
 
 /opt/homebrew/include/boost/date_time/posix_time/posix_time_types.hpp:
@@ -4740,6 +4819,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__utility/unreachable.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__functional/identity.h:
+
+/opt/homebrew/include/openssl/opensslconf.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/is_floating_point.h:
 
