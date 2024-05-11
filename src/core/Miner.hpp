@@ -24,10 +24,6 @@ class Miner {
     Miner(const Miner& m) = delete;
     Miner* operator=(const Miner& m) = delete;
 
-   public:  // далее основные функции
-    void processInput();
-    void printHelp();
-
    private:
     // ф-ции для работы с портами
     int getAvilablePort();
@@ -36,6 +32,10 @@ class Miner {
 
     void setUpPeer(std::shared_ptr<HttpServer> server);  // функция определения роутов
     void start(std::shared_ptr<HttpServer> server);      // добавление ноды в сеть
+
+   public:  // функции взаимодействия
+    void processInput();
+    void printHelp();
 };
 
 /*
