@@ -83,30 +83,30 @@ core/CMakeFiles/core.dir/Miner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/Miner.cpp.s"
 	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Miner.cpp" -o CMakeFiles/core.dir/Miner.cpp.s
 
-core/CMakeFiles/core.dir/Cryptography.cpp.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/Cryptography.cpp.o: /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Cryptography.cpp
-core/CMakeFiles/core.dir/Cryptography.cpp.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object core/CMakeFiles/core.dir/Cryptography.cpp.o"
-	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT core/CMakeFiles/core.dir/Cryptography.cpp.o -MF CMakeFiles/core.dir/Cryptography.cpp.o.d -o CMakeFiles/core.dir/Cryptography.cpp.o -c "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Cryptography.cpp"
+core/CMakeFiles/core.dir/Block.cpp.o: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/Block.cpp.o: /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Block.cpp
+core/CMakeFiles/core.dir/Block.cpp.o: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object core/CMakeFiles/core.dir/Block.cpp.o"
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT core/CMakeFiles/core.dir/Block.cpp.o -MF CMakeFiles/core.dir/Block.cpp.o.d -o CMakeFiles/core.dir/Block.cpp.o -c "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Block.cpp"
 
-core/CMakeFiles/core.dir/Cryptography.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/Cryptography.cpp.i"
-	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Cryptography.cpp" > CMakeFiles/core.dir/Cryptography.cpp.i
+core/CMakeFiles/core.dir/Block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/Block.cpp.i"
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Block.cpp" > CMakeFiles/core.dir/Block.cpp.i
 
-core/CMakeFiles/core.dir/Cryptography.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/Cryptography.cpp.s"
-	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Cryptography.cpp" -o CMakeFiles/core.dir/Cryptography.cpp.s
+core/CMakeFiles/core.dir/Block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/Block.cpp.s"
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/core" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Block.cpp" -o CMakeFiles/core.dir/Block.cpp.s
 
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/Miner.cpp.o" \
-"CMakeFiles/core.dir/Cryptography.cpp.o"
+"CMakeFiles/core.dir/Block.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
 
 core/libcore.a: core/CMakeFiles/core.dir/Miner.cpp.o
-core/libcore.a: core/CMakeFiles/core.dir/Cryptography.cpp.o
+core/libcore.a: core/CMakeFiles/core.dir/Block.cpp.o
 core/libcore.a: core/CMakeFiles/core.dir/build.make
 core/libcore.a: core/CMakeFiles/core.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcore.a"

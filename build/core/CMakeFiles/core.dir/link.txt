@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libcore.a CMakeFiles/core.dir/Miner.cpp.o CMakeFiles/core.dir/Cryptography.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ar qc libcore.a CMakeFiles/core.dir/Miner.cpp.o CMakeFiles/core.dir/Block.cpp.o
 /Library/Developer/CommandLineTools/usr/bin/ranlib libcore.a
