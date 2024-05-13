@@ -17,7 +17,6 @@
 
 #include <chrono>
 #include <thread>
-#include "spdlog/spdlog.h"
 #include "MerkleTree.hpp" //from Merkle to MerkleTree
 
 namespace Utils
