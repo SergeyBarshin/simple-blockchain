@@ -21,10 +21,7 @@
 
 namespace Utils
 {
-	//struct _KEYPAIR;
-	//void ECOH(KEYPAIR* current, EC_GROUP* ec_group);
 	std::string sha256(const std::string str);
-	//std::string hextoascii(const std::string& hex);
 	std::string merkleMe(const std::string& s1);
 	std::string merkleMeAgain(const std::string& s1, const std::string& s2);
 	std::string getMerkleRoot(std::vector<std::string>& txs);

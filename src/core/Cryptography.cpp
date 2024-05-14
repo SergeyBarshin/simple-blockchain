@@ -7,45 +7,6 @@
 
 namespace Utils
 {
-	/*
-	typedef struct _KEYPAIR {
-		BIGNUM* x, * y;
-		BIGNUM* d;
-		EC_POINT* pub_key;
-		EC_KEY* hash;
-	} KEYPAIR;
-
-	void ECOH(KEYPAIR* current, EC_GROUP* ec_group) {
-
-		current->hash = EC_KEY_new();
-		EC_KEY_set_group(current->hash, ec_group);
-		EC_KEY_generate_key(current->hash);
-
-		current->d = const_cast<BIGNUM*>(EC_KEY_get0_private_key(current->hash));
-		printf("d: (%s)\n", BN_bn2hex(current->d));
-
-		current->pub_key = const_cast<EC_POINT*>(EC_KEY_get0_public_key(current->hash));
-		current->x = BN_new();
-		current->y = BN_new();
-	}
-	
-    maybe useful later
-
-	std::string md5(const std::string msg)
-	{
-		unsigned char hash[MD5_DIGEST_LENGTH];
-		MD5_CTX md5;
-		MD5_Init(&md5);
-		MD5_Update(&md5, msg.c_str(), msg.length());
-		MD5_Final(hash, &md5);
-		std::stringstream ss;
-		for (unsigned i = 0; i < MD5_DIGEST_LENGTH; i++)
-		{
-			ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];
-		}
-		return ss.str();
-
-	}*/
 
 	std::string sha256(const std::string str)
 	{
