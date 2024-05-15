@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/core.dir/Block.cpp.o"
   "CMakeFiles/core.dir/Block.cpp.o.d"
+  "CMakeFiles/core.dir/Cryptography.cpp.o"
+  "CMakeFiles/core.dir/Cryptography.cpp.o.d"
   "CMakeFiles/core.dir/Ledger.cpp.o"
   "CMakeFiles/core.dir/Ledger.cpp.o.d"
   "CMakeFiles/core.dir/Miner.cpp.o"

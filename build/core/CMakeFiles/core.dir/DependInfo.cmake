@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Block.cpp" "core/CMakeFiles/core.dir/Block.cpp.o" "gcc" "core/CMakeFiles/core.dir/Block.cpp.o.d"
+  "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Cryptography.cpp" "core/CMakeFiles/core.dir/Cryptography.cpp.o" "gcc" "core/CMakeFiles/core.dir/Cryptography.cpp.o.d"
   "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Ledger.cpp" "core/CMakeFiles/core.dir/Ledger.cpp.o" "gcc" "core/CMakeFiles/core.dir/Ledger.cpp.o.d"
   "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Miner.cpp" "core/CMakeFiles/core.dir/Miner.cpp.o" "gcc" "core/CMakeFiles/core.dir/Miner.cpp.o.d"
   )

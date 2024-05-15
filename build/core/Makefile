@@ -199,6 +199,30 @@ Block.cpp.s:
 	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
+Cryptography.o: Cryptography.cpp.o
+.PHONY : Cryptography.o
+
+# target to build an object file
+Cryptography.cpp.o:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Cryptography.cpp.o
+.PHONY : Cryptography.cpp.o
+
+Cryptography.i: Cryptography.cpp.i
+.PHONY : Cryptography.i
+
+# target to preprocess a source file
+Cryptography.cpp.i:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Cryptography.cpp.i
+.PHONY : Cryptography.cpp.i
+
+Cryptography.s: Cryptography.cpp.s
+.PHONY : Cryptography.s
+
+# target to generate assembly for a file
+Cryptography.cpp.s:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Cryptography.cpp.s
+.PHONY : Cryptography.cpp.s
+
 Ledger.o: Ledger.cpp.o
 .PHONY : Ledger.o
 
@@ -263,6 +287,9 @@ help:
 	@echo "... Block.o"
 	@echo "... Block.i"
 	@echo "... Block.s"
+	@echo "... Cryptography.o"
+	@echo "... Cryptography.i"
+	@echo "... Cryptography.s"
 	@echo "... Ledger.o"
 	@echo "... Ledger.i"
 	@echo "... Ledger.s"
