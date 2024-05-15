@@ -5,8 +5,8 @@ project(${project})
    
 set(CMAKE_CXX_STANDARD 20)            # Enable c++20 standard
 
-set(${project}_SOURCES Miner.cpp Block.cpp Ledger.cpp)
-set(${project}_HEADERS Miner.hpp MerkleTree.hpp Block.hpp Ledger.hpp)
+set(${project}_SOURCES Miner.cpp Block.cpp Ledger.cpp Cryptography.cpp)
+set(${project}_HEADERS Miner.hpp MerkleTree.hpp Block.hpp Ledger.hpp Cryptography.hpp Transaction.hpp)
 
 
 set(${project}_SOURCE_LIST
