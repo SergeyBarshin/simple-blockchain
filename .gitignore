@@ -48,7 +48,8 @@ _deps
 ### build folder ### 
 /build*/
 build/
-build/
+/build
+
 .vscode
 *.out
 simple-blockchain

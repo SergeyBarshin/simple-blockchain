@@ -10,6 +10,7 @@
 #include "../json/single_include/nlohmann/json.hpp"
 #include "../libfort/lib/fort.hpp"
 #include "MerkleTree.hpp"
+#include "Transaction.hpp"
 
 using json = nlohmann::json;
 
@@ -32,6 +33,7 @@ class Block {
     std::string _nonce;
     std::vector<std::string> _data;
     merkle::Tree _merkleHash;
+    std::vector<Transaction>* transactions = nullptr;
     // массив транзакций, которые происходили с блоком
 
    public:
