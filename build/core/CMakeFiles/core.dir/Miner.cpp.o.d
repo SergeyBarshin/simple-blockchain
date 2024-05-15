@@ -1646,4 +1646,16 @@ core/CMakeFiles/core.dir/Miner.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__ranges/transform_view.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__ranges/views.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__ranges/zip_view.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/clocale
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/clocale \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Ledger.hpp \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Block.hpp \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/../libfort/lib/fort.hpp \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/../libfort/lib/fort.h \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/MerkleTree.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/stack \
+  /opt/homebrew/include/openssl/sha.h \
+  /opt/homebrew/include/openssl/macros.h \
+  /opt/homebrew/include/openssl/opensslconf.h \
+  /opt/homebrew/include/openssl/configuration.h \
+  /opt/homebrew/include/openssl/opensslv.h \
+  /opt/homebrew/include/openssl/e_os2.h

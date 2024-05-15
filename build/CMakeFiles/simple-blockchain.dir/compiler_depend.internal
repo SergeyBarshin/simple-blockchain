@@ -911,6 +911,7 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/json/single_include/nlohmann/json.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/libfort/lib/fort.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Block.hpp
+ /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Ledger.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/MerkleTree.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/core/Miner.hpp
  /Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/src/libfort/lib/fort.h

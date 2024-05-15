@@ -32,20 +32,19 @@ class Block {
     std::string _nonce;
     std::vector<std::string> _data;
     merkle::Tree _merkleHash;
-    // массив транзакции
+    // массив транзакций, которые происходили с блоком
 
    public:
-    Block() = delete;
-    Block(int counter, int difficulty, uint64_t version, std::string hash, std::string prevHash, std::string nonce,
-          std::vector<std::string> data, merkle::Tree merkleHash)
+    Block() = default;
+    Block(int counter, int difficulty, std::string minedTime, std::string hash, std::string prevHash, std::string nonce,
+          std::vector<std::string> data)
         : _counter(counter),
           _difficulty(difficulty),
-          _version(version),
+          minedTime(minedTime),
           _hash(hash),
           _prevHash(prevHash),
           _nonce(nonce),
-          _data(data),
-          _merkleHash(merkleHash) {}
+          _data(data) {}
 
    public:
     std::string getPreviousHash() const { return _prevHash; }
@@ -64,10 +63,10 @@ class Block {
 
     void setMerkleHash(std::string message);
 
-    std::ostream& operator<<(std::ostream& stream);
+    friend std::ostream& operator<<(std::ostream& stream, const Block& block);
 
     // работа с json
-    json serialize();
-    std::string deserialize();
-    std::string jsonToString(const json& json) { return std::string(json.dump()); }
+    json serialize() const;
+    std::string deserialize() const;
+    std::string jsonToString(const json& json) const { return std::string(json.dump()); }
 };

@@ -18,11 +18,20 @@ set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory(${nlohmann_json_source}
    ${CMAKE_CURRENT_SOURCE_DIR}/json)
 
-find_package(OpenSSL REQUIRED)
+find_package(OpenSSL REQUIRED PATHS /opt/homebrew/opt/openssl/lib) # тут указать путь до openssl (должен быть очень похож, а лучше такой-же)
+#find_package(OpenSSL)
 find_package(Boost COMPONENTS system REQUIRED)
 target_include_directories(core INTERFACE ${Boost_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/Simple-Web-Server)
 
-target_link_libraries(core PRIVATE simple-web-server nlohmann_json::nlohmann_json /opt/homebrew/opt/openssl/lib/libssl.dylib /opt/homebrew/opt/openssl/lib/libcrypto.dylib ) 
+#target_link_libraries(core PRIVATE simple-web-server nlohmann_json::nlohmann_json /opt/homebrew/opt/openssl/lib/libssl.dylib /opt/homebrew/opt/openssl/lib/libcrypto.dylib ) 
+
+if(OPENSSL_FOUND)
+   target_compile_definitions(simple-web-server INTERFACE HAVE_OPENSSL)
+   target_link_libraries(core INTERFACE OpenSSL::SSL OpenSSL::Crypto)
+endif()
+
+
+target_link_libraries(core PRIVATE simple-web-server nlohmann_json::nlohmann_json) 
 
 set(${project}_SOURCES main.cpp)
 set(${project}_SOURCE_LIST ${${project}_SOURCES})

@@ -910,6 +910,7 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/json/single_include/nlohmann/json.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Block.hpp \
+  /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Ledger.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/MerkleTree.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Miner.hpp \
   /Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/libfort/lib/fort.h \
@@ -1719,6 +1720,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 
 /opt/homebrew/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
 
+/opt/homebrew/include/boost/smart_ptr/detail/sp_has_gcc_intrinsics.hpp:
+
 /opt/homebrew/include/boost/asio/impl/thread_pool.hpp:
 
 /opt/homebrew/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp:
@@ -2194,8 +2197,6 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /opt/homebrew/include/boost/config/compiler/clang_version.hpp:
 
 /opt/homebrew/include/boost/asio/ip/basic_resolver_entry.hpp:
-
-/opt/homebrew/include/boost/smart_ptr/detail/sp_has_gcc_intrinsics.hpp:
 
 /opt/homebrew/include/boost/asio/ip/basic_endpoint.hpp:
 
@@ -3866,6 +3867,8 @@ CMakeFiles/simple-blockchain.dir/main.cpp.o: /Users/sergey/Documents/BMSTU/2\ se
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__concepts/same_as.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__memory/addressof.h:
+
+/Users/sergey/Documents/BMSTU/2\ sem/ПКШ/simple-blockchain/src/core/Ledger.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__iterator/wrap_iter.h:
 

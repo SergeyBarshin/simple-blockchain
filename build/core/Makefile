@@ -199,6 +199,30 @@ Block.cpp.s:
 	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
+Ledger.o: Ledger.cpp.o
+.PHONY : Ledger.o
+
+# target to build an object file
+Ledger.cpp.o:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Ledger.cpp.o
+.PHONY : Ledger.cpp.o
+
+Ledger.i: Ledger.cpp.i
+.PHONY : Ledger.i
+
+# target to preprocess a source file
+Ledger.cpp.i:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Ledger.cpp.i
+.PHONY : Ledger.cpp.i
+
+Ledger.s: Ledger.cpp.s
+.PHONY : Ledger.s
+
+# target to generate assembly for a file
+Ledger.cpp.s:
+	cd "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build" && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/Ledger.cpp.s
+.PHONY : Ledger.cpp.s
+
 Miner.o: Miner.cpp.o
 .PHONY : Miner.o
 
@@ -239,6 +263,9 @@ help:
 	@echo "... Block.o"
 	@echo "... Block.i"
 	@echo "... Block.s"
+	@echo "... Ledger.o"
+	@echo "... Ledger.i"
+	@echo "... Ledger.s"
 	@echo "... Miner.o"
 	@echo "... Miner.i"
 	@echo "... Miner.s"

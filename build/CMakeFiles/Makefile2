@@ -169,12 +169,12 @@ CMakeFiles/simple-blockchain.dir/all: libfort/lib/CMakeFiles/fort.dir/all
 CMakeFiles/simple-blockchain.dir/all: core/CMakeFiles/core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple-blockchain.dir/build.make CMakeFiles/simple-blockchain.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple-blockchain.dir/build.make CMakeFiles/simple-blockchain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=6,7 "Built target simple-blockchain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=7,8 "Built target simple-blockchain"
 .PHONY : CMakeFiles/simple-blockchain.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/simple-blockchain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 7
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/simple-blockchain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 0
 .PHONY : CMakeFiles/simple-blockchain.dir/rule
@@ -221,7 +221,7 @@ libfort/CMakeFiles/headers.dir/clean:
 libfort/lib/CMakeFiles/fort.dir/all:
 	$(MAKE) $(MAKESILENT) -f libfort/lib/CMakeFiles/fort.dir/build.make libfort/lib/CMakeFiles/fort.dir/depend
 	$(MAKE) $(MAKESILENT) -f libfort/lib/CMakeFiles/fort.dir/build.make libfort/lib/CMakeFiles/fort.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=4,5 "Built target fort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=5,6 "Built target fort"
 .PHONY : libfort/lib/CMakeFiles/fort.dir/all
 
 # Build rule for subdir invocation for target.
@@ -247,12 +247,12 @@ libfort/lib/CMakeFiles/fort.dir/clean:
 core/CMakeFiles/core.dir/all:
 	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/depend
 	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=1,2,3 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" --progress-num=1,2,3,4 "Built target core"
 .PHONY : core/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 core/CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/CMakeFiles/core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/sergey/Documents/BMSTU/2 sem/ПКШ/simple-blockchain/build/CMakeFiles" 0
 .PHONY : core/CMakeFiles/core.dir/rule

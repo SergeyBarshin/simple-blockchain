@@ -9,6 +9,7 @@
 #include "../Simple-Web-Server/client_http.hpp"
 #include "../Simple-Web-Server/server_http.hpp"
 #include "../json/single_include/nlohmann/json.hpp"
+#include "Ledger.hpp"
 
 using HttpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
 using HttpClient = SimpleWeb::Client<SimpleWeb::HTTP>;
@@ -16,8 +17,9 @@ using json = nlohmann::json;
 
 class Miner {
    private:
-    std::shared_ptr<HttpServer> server;
-    std::vector<int> peers;
+    std::shared_ptr<HttpServer> _server;
+    std::vector<int> _peers;
+    BlockChain _blockchain;
 
    public:
     Miner(std::shared_ptr<HttpServer> server);
@@ -40,4 +42,6 @@ class Miner {
 
 /*
 Miner - является 'единицой p2p сети'.
+
+работу с консолью можно вынести в дружественный класс
 */

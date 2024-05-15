@@ -346,6 +346,9 @@ OPENSSL_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/openssl@3/3.2.1/include
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=/opt/homebrew/Cellar/openssl@3/3.2.1/lib/libssl.dylib
 
+//The directory containing a CMake configuration file for OpenSSL.
+OpenSSL_DIR:PATH=/opt/homebrew/lib/cmake/OpenSSL
+
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 

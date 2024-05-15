@@ -6,12 +6,14 @@ void Block::setMerkleHash(std::string message) {
     tree.insert(hash);
 }
 
-std::ostream& Block::operator<<(std::ostream& stream) {
+std::ostream& operator<<(std::ostream& stream, const Block& block) {
     fort::char_table table;
-    for (unsigned i = 0; i < _data.size(); i++) {
-        table << fort::header << "Block: " << _counter << fort::endr << "Time: " << minedTime.c_str() << fort::endr
-              << "Hash: " << _hash.c_str() << fort::endr << "Nonce: " << _nonce.c_str() << fort::endr
-              << "Prev: " << _prevHash.c_str() << fort::endr << "Transaction: " << deserialize().c_str() << fort::endr;
+
+    for (unsigned i = 0; i < block._data.size(); i++) {
+        table << fort::header << "Block: " << block._counter << fort::endr << "Time: " << block.minedTime.c_str()
+              << fort::endr << "Hash: " << block._hash.c_str() << fort::endr << "Nonce: " << block._nonce.c_str()
+              << fort::endr << "Prev: " << block._prevHash.c_str() << fort::endr
+              << "Transaction: " << block.deserialize().c_str() << fort::endr;
 
         std::cout << table.to_string() << std::endl;
     }
@@ -20,7 +22,7 @@ std::ostream& Block::operator<<(std::ostream& stream) {
     return stream;
 }
 
-json Block::serialize() {
+json Block::serialize() const {
     json j = {{"difficulty", _difficulty},
               {"counter", _counter},
               {"minedTime", minedTime},
@@ -31,7 +33,7 @@ json Block::serialize() {
     return j;
 }
 
-std::string Block::deserialize() {
+std::string Block::deserialize() const {
     // для вывода
     std::string dataString;
     for (int i = 0; i < _data.size(); i++) {

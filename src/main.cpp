@@ -1,4 +1,3 @@
-#include "core/Block.hpp"
 #include "core/Miner.hpp"
 #include "libfort/lib/fort.hpp"
 
