@@ -9,10 +9,6 @@
 #include "../json/single_include/nlohmann/json.hpp"
 
 class Transaction {
-   public:
-    static constexpr uint32_t INDEX_NULL = std::numeric_limits<uint32_t>::max();
-    int16_t version = 0;
-
    private:
     float amount;
     std::unique_ptr<std::string> in;
@@ -32,3 +28,6 @@ class Transaction {
     // uint64_t calculateHash() const {};
     const uint64_t getHash() const { return hash; }
 };
+/*
+Класс транзакций. Нужет чтобы переделать транзацию с 'просто строки' на более сложную правильную сущьность
+*/

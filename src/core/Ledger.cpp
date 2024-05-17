@@ -19,24 +19,17 @@ std::string BlockChain::serialize() const {
     return j.dump(3);
 }
 
-void BlockChain::behave(BlockChain::Stage stage) {
+void BlockChain::initBlockchain() {
     std::vector<std::string> data;
 
-    if (stage == Stage::INIT)
-        std::cout << "Blockchain Initialized" << "\n";
-    else if (stage == Stage::GENESIS) {
-        data.push_back("Genesis");
-        std::pair<std::string, std::string> nonce = Utils::findHash(3, 0, std::string(GENESIS_HASH), data);
+    data.push_back("Genesis");
+    std::pair<std::string, std::string> nonce = Utils::findHash(3, 0, std::string(GENESIS_HASH), data);
 
-        this->blockchain.push_back(
-            Block(0, 3, Block::getTime().c_str(), nonce.first, std::string(GENESIS_HASH), nonce.second, data));
-        std::cout << "Blockchain has been created" << "\n";
+    this->blockchain.push_back(
+        Block(0, 3, Block::getTime().c_str(), nonce.first, std::string(GENESIS_HASH), nonce.second, data));
+    std::cout << "Blockchain has been created" << "\n";
 
-        this->printBlocks();
-    } else if (stage == Stage::JOIN)
-        std::cout << "Joined blockchain" << "\n";
-    else
-        std::cout << "Something went wrong during blockchain creation" << "\n";
+    this->printBlocks();
 }
 
 void BlockChain::addBlock(int counter, int difficulty, std::string minedTime, std::string hash, std::string prevHash,

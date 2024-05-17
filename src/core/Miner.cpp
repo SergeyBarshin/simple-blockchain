@@ -12,7 +12,7 @@ void Miner::printHelp() {
     std::cout << "Type /add to add transaction" << std::endl;
 }
 
-void Miner::processInput() {
+void Miner::processInput() {  // интерфейс
     printHelp();
     for (;;) {
         std::vector<std::string> transaction;
@@ -56,13 +56,14 @@ void Miner::processInput() {
             */
             if ((_blockchain.getNumOfBlocks() != 0) && ((_blockchain.getNumOfBlocks() % 3) == 0))
                 std::cout << "Вам начислено +0.25token\n";
+
             _blockchain.addBlock(_blockchain.getNumOfBlocks(), difficulty, Block::getTime().c_str(), nonce.first,
                                  _blockchain.getLatestBlockHash(), nonce.second, transaction);
 
             std::cout << "Updating blockchain\n";
             for (int i = 0; i < _peers.size(); i++) {
                 int port = _peers[i];
-                std::cout << "--- sending to node " << port << '\n';
+                // std::cout << "--- sending to node " << port << '\n';
                 HttpClient client("localhost:" + std::to_string(port));
                 auto req = client.request("POST", "/updateLedger", _blockchain.serialize());
             }
@@ -126,7 +127,7 @@ void Miner::setUpPeer(std::shared_ptr<HttpServer> _server) {  // определ�
                   << "Blockchain recreated\n";
     };
 
-    std::cout << "Server started at localhost: " << _server->config.port << "\n";
+    std::cout << "Server started at localhost:" << _server->config.port << "\n";
 }
 
 void Miner::start(std::shared_ptr<HttpServer> _server) {
@@ -141,10 +142,10 @@ void Miner::start(std::shared_ptr<HttpServer> _server) {
     // сейчас ноды узнают других членов сети по общему файлу -> если успею, то переделать на внешние сети
 
     if (in == 'y') {
-        _blockchain.behave(BlockChain::Stage::GENESIS);
+        _blockchain.initBlockchain();
     } else if (in == 'j') {
         _peers = readPort("ports.txt");
-        _blockchain.behave(BlockChain::Stage::JOIN);
+        std::cout << "Joining blockchain..." << "\n";
 
         json js;
         js["port"] = _server->config.port;

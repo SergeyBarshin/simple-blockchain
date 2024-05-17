@@ -27,32 +27,6 @@ merkle::Hash getMerkleRootM(std::vector<std::string>& txs) {
     return root;
 }
 
-std::string merkleMe(const std::string& s1) { return sha256(s1); }
-
-std::string merkleMeAgain(const std::string& s1, const std::string& s2) { return sha256(sha256(s1) + sha256(s2)); }
-
-std::string getMerkleRoot(std::vector<std::string>& merkle) {
-    bool mutation = false;
-
-    if (merkle.size() == 1) {
-        return sha256(merkle[0]);
-    }
-
-    std::vector<std::string> new_merkle = merkle;
-
-    while (new_merkle.size() > 1) {
-        if (new_merkle.size() % 2 == 1) new_merkle.push_back(merkle.back());
-
-        std::vector<std::string> result;
-
-        for (int i = 0; i < new_merkle.size(); i += 2) {
-            result.push_back(sha256(new_merkle[i]) + sha256(new_merkle[i++]));
-        }
-        new_merkle = result;
-    }
-    return new_merkle[0];
-}
-
 std::pair<std::string, std::string> findHash(int dificulty, int index, std::string prevHash,
                                              std::vector<std::string>& txs) {
     std::string target = "";

@@ -1,3 +1,4 @@
+#include "core/Interface.hpp"
 #include "core/Miner.hpp"
 #include "libfort/lib/fort.hpp"
 
@@ -7,6 +8,8 @@ int main(void) {
     std::thread server_thread([&server]() { server->start(); });
 
     miner->processInput();
+
+    // Interface* input = new CLInterface();
 
     server_thread.join();
     return 0;

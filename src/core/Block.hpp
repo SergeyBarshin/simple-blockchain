@@ -35,7 +35,7 @@ class Block {
     merkle::Tree _merkleHash;
 
     // массив транзакций, которые происходили с блоком
-    std::vector<Transaction>* transactions = nullptr;
+    // std::vector<Transaction>* transactions = nullptr;
 
    public:
     Block() = default;

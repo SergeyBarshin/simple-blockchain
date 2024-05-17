@@ -1,3 +1,6 @@
+#ifndef MINER_HPP
+#define MINER_HPP
+
 #include <algorithm>
 // #include <boost/filesystem.hpp>
 #include <fstream>
@@ -40,6 +43,7 @@ class Miner {
     void printHelp();
 };
 
+#endif  // MINER_HPP
 /*
 Miner - является 'единицой p2p сети'.
 
