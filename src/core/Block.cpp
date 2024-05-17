@@ -8,14 +8,15 @@ void Block::setMerkleHash(std::string message) {
 
 std::ostream& operator<<(std::ostream& stream, const Block& block) {
     fort::char_table table;
+    // std::cout << block._data.size() << '\n';
 
-    for (unsigned i = 0; i < block._data.size(); i++) {
+    for (int i = 0; i < block._data.size(); i++) {
+        // std::cout << block._data[i] << '\n';
+
         table << fort::header << "Block: " << block._counter << fort::endr << "Time: " << block.minedTime.c_str()
               << fort::endr << "Hash: " << block._hash.c_str() << fort::endr << "Nonce: " << block._nonce.c_str()
               << fort::endr << "Prev: " << block._prevHash.c_str() << fort::endr
               << "Transaction: " << block.deserialize().c_str() << fort::endr;
-
-        std::cout << table.to_string() << std::endl;
     }
 
     stream << table.to_string();

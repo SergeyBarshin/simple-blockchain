@@ -33,8 +33,9 @@ class Block {
     std::string _nonce;
     std::vector<std::string> _data;
     merkle::Tree _merkleHash;
-    std::vector<Transaction>* transactions = nullptr;
+
     // массив транзакций, которые происходили с блоком
+    std::vector<Transaction>* transactions = nullptr;
 
    public:
     Block() = default;

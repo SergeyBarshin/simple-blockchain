@@ -29,6 +29,6 @@ class Transaction {
         : amount(amount), in(std::move(in)), out(std::move(out)) {}
 
    public:
-    uint64_t calculateHash() const {};
+    // uint64_t calculateHash() const {};
     const uint64_t getHash() const { return hash; }
 };

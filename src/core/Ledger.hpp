@@ -5,6 +5,8 @@
 
 #include "../json/single_include/nlohmann/json.hpp"
 #include "Block.hpp"
+#include "Utils.hpp"
+
 using json = nlohmann::json;
 
 #define GENESIS_HASH "000000000000000000000000000000000000000001"
@@ -36,14 +38,14 @@ class BlockChain {
     std::string getLatestBlockHash() const { return this->blockchain.back().getHash(); };
 
     void printBlocks() const {
-        for (unsigned i = 0; i < this->getNumOfBlocks(); i++) std::cout << getBlock(i) << '\n';
+        for (int i = 0; i < this->blockchain.size(); ++i) std::cout << getBlock(i) << '\n';
     }
 
    public:
     void behave(Stage stage);
     std::string serialize() const;
-    // int addBlock(int difficulty, int counter, std::string minedtime, std::string prevHash, std::string hash,
-    //             std::string nonce, std::vector<std::string>& merkle);
+    void addBlock(int counter, int difficulty, std::string minedTime, std::string hash, std::string prevHash,
+                  std::string nonce, std::vector<std::string>& merkle);
 };
 
 /*

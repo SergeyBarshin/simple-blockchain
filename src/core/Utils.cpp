@@ -59,19 +59,22 @@ std::pair<std::string, std::string> findHash(int dificulty, int index, std::stri
     for (unsigned i = 0; i < dificulty; i++) {
         target += std::to_string(0);
     }
+
     std::string header = std::to_string(index) + prevHash + getMerkleRootM(txs).to_string();
     auto start = std::chrono::high_resolution_clock::now();
+
+    std::cout << "Mining...\n";
     for (int i = 384993400; i >= 0; i--) {
         std::string blockHash = sha256(header + std::to_string(i));
-        std::cout << "Mining..." << blockHash << "\r";
         if (blockHash.substr(0, dificulty) == target) {
-            std::cout << std::endl;
+            std::cout << "FIND HASH: " << blockHash << "\r" << std::endl;
+
             auto finish = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double, std::milli> elapsed = finish - start;
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));  // задержка для красоты
             std::cout << "Elapsed Time: ~" << (elapsed.count() / 1000) << " seconds" << std::endl;
             std::cout << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             return std::make_pair(blockHash, std::to_string(i));
         }
     }

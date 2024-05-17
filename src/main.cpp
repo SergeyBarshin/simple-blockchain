@@ -4,7 +4,6 @@
 int main(void) {
     auto server = std::make_shared<HttpServer>();
     auto miner = std::make_unique<Miner>(server);
-
     std::thread server_thread([&server]() { server->start(); });
 
     miner->processInput();
