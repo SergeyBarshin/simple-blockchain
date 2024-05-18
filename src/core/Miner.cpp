@@ -40,7 +40,7 @@ int Miner::getAvilablePort() {
     auto port = uni(rng);
     return port;
 }
-
+//writing port in txt file
 void Miner::writePort(unsigned int port, const char* path) {
     std::ofstream file;
     file.open(path, std::ios::out | std::ios::app);
