@@ -1,74 +1,35 @@
 #include "Miner.hpp"
 
-Miner::Miner(std::shared_ptr<HttpServer> server) : _server(server) {
-    start(server);
+Miner::Miner(std::shared_ptr<HttpServer> server, bool isGenesis) : _server(server) {
+    start(server, isGenesis);
     setUpPeer(std::move(server));
 }
 
-void Miner::printHelp() {
-    std::cout << "\nType /listNodes to print adresses of all nodes in network:" << std::endl;
-    std::cout << "Type /help to print manual:" << std::endl;
-    std::cout << "Type /print to print blocks:" << std::endl;
-    std::cout << "Type /add to add transaction" << std::endl;
-}
+void Miner::processTransaction(std::string transactionData, int difficulty) {
+    std::vector<std::string> transaction;
+    transaction.push_back(transactionData);
 
-void Miner::processInput() {  // интерфейс
-    printHelp();
-    for (;;) {
-        std::vector<std::string> transaction;
+    std::pair<std::string, std::string> nonce =
+        Utils::findHash(difficulty, _blockchain.getNumOfBlocks(), _blockchain.getLatestBlockHash(), transaction);
 
-        std::string input;
-        std::cin >> input;
-        if (input == "/listNodes") {
-            for (int i = 0; i < _peers.size(); ++i) std::cout << "localhost:" << _peers[i] << ", ";
-            std::cout << std::endl;
-        } else if (input == "/help") {
-            printHelp();
-        } else if (input == "/print") {
-            _blockchain.printBlocks();
-        } else if (input == "/add") {
-            std::string miner;
-            std::string sender;
-            std::string recipient;
-            float amount;
-            int difficulty = 3;
+    /*
+    Это будет основной вариант транзакции и цифрового кошелька для будущей логики,
+    сейчас он просто имитирует + 0.25 токена за каждые 3 блока.
+    */
+    if ((_blockchain.getNumOfBlocks() != 0) && ((_blockchain.getNumOfBlocks() % 3) == 0))
+        std::cout << "Вам начислено +0.25token\n";
 
-            std::cout << "Sender:\n";
-            std::cin >> sender;
+    _blockchain.addBlock(_blockchain.getNumOfBlocks(), difficulty, Block::getTime().c_str(), nonce.first,
+                         _blockchain.getLatestBlockHash(), nonce.second, transaction);
 
-            std::cout << "Recipient:\n";
-            std::cin >> recipient;
-
-            std::cout << "Amount:";
-            std::cin >> amount;
-
-            std::string tx = "Sender: " + sender + ", " + "Recipient: " + recipient + ", " + "Amount: +" +
-                             std::to_string(amount) + "token";
-
-            transaction.push_back(tx);
-
-            std::pair<std::string, std::string> nonce = Utils::findHash(difficulty, _blockchain.getNumOfBlocks(),
-                                                                        _blockchain.getLatestBlockHash(), transaction);
-
-            /*
-            Это будет основной вариант транзакции и цифрового кошелька для будущей логики,
-            сейчас он просто имитирует + 0.25 токена за каждые 3 блока.
-            */
-            if ((_blockchain.getNumOfBlocks() != 0) && ((_blockchain.getNumOfBlocks() % 3) == 0))
-                std::cout << "Вам начислено +0.25token\n";
-
-            _blockchain.addBlock(_blockchain.getNumOfBlocks(), difficulty, Block::getTime().c_str(), nonce.first,
-                                 _blockchain.getLatestBlockHash(), nonce.second, transaction);
-
-            std::cout << "Updating blockchain\n";
-            for (int i = 0; i < _peers.size(); i++) {
-                int port = _peers[i];
-                // std::cout << "--- sending to node " << port << '\n';
-                HttpClient client("localhost:" + std::to_string(port));
-                auto req = client.request("POST", "/updateLedger", _blockchain.serialize());
-            }
-        }
+    std::cout << "Updating blockchain...\n";
+    for (int i = 0; i < _peers.size(); i++) {
+        int port = _peers[i];
+        // std::cout << "--- sending to node " << port << '\n';
+        HttpClient client("localhost:" + std::to_string(port));
+        auto req = client.request("POST", "/updateLedger", _blockchain.serialize());
     }
+    std::cout << "Blockchain updated!\n";
 }
 
 int Miner::getAvilablePort() {
@@ -130,21 +91,15 @@ void Miner::setUpPeer(std::shared_ptr<HttpServer> _server) {  // определ�
     std::cout << "Server started at localhost:" << _server->config.port << "\n";
 }
 
-void Miner::start(std::shared_ptr<HttpServer> _server) {
-    std::cout << "Welcome to Chain, stranger!\n";
-    std::cout << "If you are creating a new blockchain, type 'y',\nif you are joining the existing, type 'j':\n";
-
-    char in = 'j';
-    std::cin >> in;
-
+void Miner::start(std::shared_ptr<HttpServer> _server, bool isGenesis) {
     _server->config.port = getAvilablePort();
     writePort(_server->config.port, "ports.txt");
+    _peers = readPort("ports.txt");
     // сейчас ноды узнают других членов сети по общему файлу -> если успею, то переделать на внешние сети
 
-    if (in == 'y') {
+    if (isGenesis)
         _blockchain.initBlockchain();
-    } else if (in == 'j') {
-        _peers = readPort("ports.txt");
+    else {
         std::cout << "Joining blockchain..." << "\n";
 
         json js;
@@ -182,8 +137,6 @@ void Miner::start(std::shared_ptr<HttpServer> _server) {
             _blockchain.addBlock(block["counter"], block["difficulty"], block["minedTime"], block["hash"],
                                  block["prevHash"], block["nonce"], data);
         }
-    } else {
-        return;
     }
 }
 

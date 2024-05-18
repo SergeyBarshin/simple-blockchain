@@ -25,9 +25,13 @@ class Miner {
     BlockChain _blockchain;
 
    public:
-    Miner(std::shared_ptr<HttpServer> server);
+    Miner(std::shared_ptr<HttpServer> server, bool isGenesis);
     Miner(const Miner& m) = delete;
     Miner* operator=(const Miner& m) = delete;
+    const BlockChain& getBlockChain() { return _blockchain; }
+    std::vector<int> getPeers() { return _peers; }
+
+    void processTransaction(std::string transactionData, int difficulty);
 
    private:
     // ф-ции для работы с портами
@@ -36,11 +40,7 @@ class Miner {
     void writePort(unsigned int port, const char* path);
 
     void setUpPeer(std::shared_ptr<HttpServer> server);  // функция определения роутов
-    void start(std::shared_ptr<HttpServer> server);      // добавление ноды в сеть
-
-   public:  // функции взаимодействия
-    void processInput();
-    void printHelp();
+    void start(std::shared_ptr<HttpServer> server, bool isGenesis);  // добавление ноды в сеть
 };
 
 #endif  // MINER_HPP

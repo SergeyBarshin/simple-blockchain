@@ -4,12 +4,16 @@
 
 int main(void) {
     auto server = std::make_shared<HttpServer>();
-    auto miner = std::make_unique<Miner>(server);
+
+    Creator* creator = new ClICreator();  // созадаем CLI, применяя "фабричный метод".
+    // Creator* creator = new CUICreator();  ClICreator заменить на GUI
+
+    bool isGenesis = creator->getInitStage();
+    auto miner = std::make_shared<Miner>(server, isGenesis);
+
     std::thread server_thread([&server]() { server->start(); });
 
-    miner->processInput();
-
-    // Interface* input = new CLInterface();
+    creator->FactoryMethod(miner);
 
     server_thread.join();
     return 0;
