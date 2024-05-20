@@ -1,6 +1,8 @@
 /*
 Обработчик комман из теминала, который обращается к функциям майнера
 */
+#ifndef INTERFACE_HPP
+#define INTERFACE_HPP
 #include <iostream>
 #include <memory>
 
@@ -98,3 +100,4 @@ class ClICreator : public Creator {
 
     Interface* FactoryMethod(std::shared_ptr<Miner>& miner) const override { return new CLInterface(miner); }
 };
+#endif
